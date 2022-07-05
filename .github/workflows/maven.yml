@@ -26,4 +26,7 @@ jobs:
       run: mvn -B package --file ./gaship/pom.xml
 
     - name: Run SonarQube
-        run: mvn sonar:sonar -Dsonar.projectKey=${{secrets.SONAR_PROJECTKEY}} -Dsonar.host.url=${{secrets.SONAR_HOST}} -Dsonar.login=${{secrets.SONAR_TOKEN}}
+        shell: bash
+        run: |
+          cd ./gaship
+          mvn sonar:sonar -Dsonar.projectKey=${{secrets.SONAR_PROJECTKEY}} -Dsonar.host.url=${{secrets.SONAR_HOST}} -Dsonar.login=${{secrets.SONAR_TOKEN}}
