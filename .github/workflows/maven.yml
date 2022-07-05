@@ -35,9 +35,7 @@ jobs:
         mvn sonar:sonar -Dsonar.projectKey="$SONAR_PROJECTKEY" -Dsonar.host.url="$SONAR_HOST_URL" -Dsonar.login="$SONAR_TOKEN"
 
     - name : Depoly
-        run: |
-          cd ./gaship
-        uses: appleboy/scp-action@master
+        uses: ./gaship/appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_IP }}
           username: ${{ secrets.SSH_ID }}
