@@ -28,7 +28,7 @@ jobs:
     - name: Run Sonar Cube
       env:
         SONAR_PROJECTKEY = ${{secrets.SONAR_PROJECTKEY}}
-        SONAR_HOST_URL = ${{secrets.SONAR_HOST_URL}}
+        SONAR_HOST_URL = ${{secrets.SONAR_HOST}}
         SONAR_TOKEN = ${{secrets.SONAR_TOKEN}}
       run : |
         cd ./gaship
